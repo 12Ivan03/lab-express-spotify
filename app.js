@@ -43,7 +43,7 @@ app.get('/albums/:id' ,(req,res) => {
 
     spotifyApi.getArtistAlbums(artistId)
         .then((data) => {
-            res.render('albums', {artistAlbums: data.body.items})
+            res.render('albums', {artistAlbums: data.body.items, title: "albums", bgPage: "albums-artist"})
         })
     .catch(err => console.log(err));
 })
@@ -54,7 +54,7 @@ app.get('/tracks/:trackid', (req,res) => {
     spotifyApi.getAlbumTracks(artistTracks)
         .then(data => {
             console.log(data.body.items)
-            res.render('tracks', {artistPreviewTracks: data.body.items})
+            res.render('tracks', {artistPreviewTracks: data.body.items, title: "traks", bgPage: "artistTraks"})
         })
     .catch(err => console.log(err))
 })

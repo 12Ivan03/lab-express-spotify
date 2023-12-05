@@ -29,7 +29,7 @@
 
 .return-home-btn a {
     text-decoration: none;
-    color: cadetblue;
+    color: aquamarine;
 }
 
 /* Search transparent middle div */
@@ -108,7 +108,7 @@
 
 .info-artists h2 {
     text-align: center;
-    color: rgb(93, 219, 223);;
+    color: rgb(93, 219, 223);
     margin-bottom: 0.5rem;
 }
 
@@ -123,4 +123,55 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* albums page */
+
+.albums-artist {
+    background-color: rgb(51, 78, 78);
+}
+
+.albums-artist a {
+    color: aquamarine;
+}
+
+/* traks */
+
+.artistTraks {
+    background-color: rgb(71, 113, 115);
+}
+
+.track-info-artist {
+    display: grid;
+    grid-template-columns: repeat(100, 20rem);
+    grid-template-rows: 35rem; 
+    gap: 1.5rem;
+    margin-left: 3rem;
+    margin-top: 7rem;
+}
+
+.track-info-artist img {
+    height: 20rem;
+    margin-left: -1.1rem;
+}
+
+.artist-info h2 {
+    color: rgb(93, 219, 223);
+    margin-top: 13rem;
+}
+
+.track-info-artist audio {
+    margin-left: -0.4rem;
+}
+
+.track-box {
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.track-artist-search {
+    position: fixed;
+    margin-left: 45vw;
 }
