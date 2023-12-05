@@ -1,9 +1,10 @@
-<h1>search result:</h1>
-
+<h1 class="artist-search">Search results:</h1>
+<div class="artist-gid">
     {{#each artists}}
-        <div class="artist-info">
+        <div class="info-artists">
             <h2>{{name}}</h2>
             <img src="{{images.[1].url}}" alt="{{name}} Image"/>         
-            <a href="/albums/{{id}}">View Albums</a>
+            <a href="/albums/{{id}}">View Albums</a>  
         </div>
     {{/each}}
+</div>

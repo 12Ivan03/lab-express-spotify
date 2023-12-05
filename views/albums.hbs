@@ -1,9 +1,9 @@
 <h1>albums</h1>
 
-    {{#each artistAlbums}}
-        <div class="artist-info">
-            <h2>{{name}}</h2>
-            <img src="{{images.[1].url}}" alt="{{name}} Image"/>         
-            <a href="/tracks/{{id}}">View Tracks</a>
-        </div>
-    {{/each}}
+{{#each artistAlbums}}
+    <div class="artist-info">
+        <h2>{{name}}</h2>
+        <img src="{{images.[1].url}}" alt="{{name}} Image"/>         
+        <a href="/tracks/{{id}}">View Tracks</a>
+    </div>
+{{/each}}

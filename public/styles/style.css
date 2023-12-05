@@ -5,10 +5,122 @@
     overflow: hidden;
 }
 
+/* nav-bar */
 
+.nav-bar {
+    background-color: rgb(32, 49, 49);
+    height: 3rem;
+}
+
+.nav-bar ul {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.return-home-btn {
+    list-style: none;
+}
+
+.return-home-btn:hover {
+    opacity: 0.6;
+}
+
+.return-home-btn a {
+    text-decoration: none;
+    color: cadetblue;
+}
+
+/* Search transparent middle div */
 .center-home-page {
+    background-color: rgb(251, 251, 251, 0.5);
+    position: absolute;
+    height: 10rem;
+    width: 40rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.input-home-page {
+    width: 20rem;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.input-home-page::placeholder {
+    text-indent: 0.3rem;
+}
+
+.search-btn-home-page {
+    border: none;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    background-color: rgb(25, 196, 96);
+}
+
+.search-btn-home-page:hover {
+    opacity: 0.8;
+    color: rgb(9, 47, 24);
+}
+
+/* search results */
+
+.search-results {
+    background-color: rgb(25, 37, 37);
+}
+
+.artist-search {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    color:  cadetblue;
+    font-size: xx-large;
+}
+
+.artist-gid {
+    display: grid;
+    grid-template-columns: repeat(4, 17rem);
+    grid-template-rows: 17rem; 
+    justify-content: center;
+    gap: 1rem;
+}
+
+ /* artist's box */
+
+.info-artists {
+    border: 1px solid rgb(109, 134, 56);
+    padding: 1rem;
+    background-color: rgba(41, 50, 23, 0.5);
+}
+
+.info-artists h2 {
+    text-align: center;
+    color: rgb(93, 219, 223);;
+    margin-bottom: 0.5rem;
+}
+
+.info-artists img {
+    height: 12rem;
+    margin-left: 1.5rem;
+}
+
+.info-artists a {
+    text-decoration: none;
+    color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
