@@ -18,31 +18,48 @@ const spotifyApi = new SpotifyWebApi({
     clientSecret: process.env.CLIENT_SECRET
 });
 
-console.log('Client ID:', process.env.CLIENT_ID);
-console.log('Client ID:', process.env.CLIENT_SECRET);
+// console.log('Client ID:', process.env.CLIENT_ID);
+// console.log('Client ID:', process.env.CLIENT_SECRET);
 
 spotifyApi
   .clientCredentialsGrant()
   .then(data => spotifyApi.setAccessToken(data.body['access_token']))
   .catch(error => console.log('Something went wrong when retrieving an access token', error));
 
-
 app.get('/', (req,res) => {
     res.render('index',{title: "homepage", bgPage: "homePage"})
 })
 
 app.get('/artistSearch', (req, res) => {
-    const artistQuery = req.query;
-    console.log(artistQuery);
+    const artistQuery = req.query.q;
 
     spotifyApi.searchArtists(artistQuery)
-        .then(data => {
-            console.log('The received data from the API: ', data.body);
-            res.render('artistSearch');
-            // { artists: data.body.artists.items }
-        })
+            .then(data => {
+                //console.log('The received data from the API: ', data.body.artists.items[0]);
+                res.render('artistSearch', {artists: data.body.artists.items});
+            })
         .catch(err => console.log(err));
 });
 
+app.get('/albums/:id' ,(req,res) => {
+    const artistId = req.params.id
+
+    spotifyApi.getArtistAlbums(artistId)
+        .then((data) => {
+            res.render('albums', {artistAlbums: data.body.items})
+        })
+    .catch(err => console.log(err));
+})
+
+app.get('/tracks/:trackid', (req,res) => {
+    const artistTracks = req.params.trackid
+
+    spotifyApi.getAlbumTracks(artistTracks)
+        .then(data => {
+            console.log(data.body.items)
+            res.render('tracks', {artistPreviewTracks: data.body.items})
+        })
+    .catch(err => console.log(err))
+})
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
