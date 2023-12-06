@@ -114,6 +114,7 @@
 
 .info-artists img {
     height: 12rem;
+    width: 12rem;
     margin-left: 1.5rem;
 }
 
@@ -169,6 +170,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.track-box img {
+    width: 20rem;
 }
 
 .track-artist-search {
