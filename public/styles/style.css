@@ -10,6 +10,10 @@
 .nav-bar {
     background-color: rgb(32, 49, 49);
     height: 3rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index:10
 }
 
 .nav-bar ul {
@@ -85,7 +89,7 @@
 .artist-search {
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
+    margin: 5rem 0 2rem 0;
     color:  cadetblue;
     font-size: xx-large;
 }
@@ -158,7 +162,7 @@
 
 .artist-info h2 {
     color: rgb(93, 219, 223);
-    margin-top: 13rem;
+    margin-top: 5rem;
 }
 
 .track-info-artist audio {
@@ -178,5 +182,6 @@
 
 .track-artist-search {
     position: fixed;
+    margin-top: -7vh;
     margin-left: 45vw;
 }
